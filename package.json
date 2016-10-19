@@ -1,0 +1,22 @@
+{
+  "name": "jsonlint-tree",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "jsonlint-tree": "./index.js"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "jsonlint": "^1.6.2",
+    "minimist": "^1.2.0",
+    "recursive-readdir": "^2.1.0",
+    "replaceall": "^0.1.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
