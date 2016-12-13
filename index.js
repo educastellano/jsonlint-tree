@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/env node
 var fs          = require('fs')
 var readdir     = require('recursive-readdir')
 var jsonlint    = require('jsonlint')
