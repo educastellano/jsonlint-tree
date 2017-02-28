@@ -1,10 +1,20 @@
 {
   "name": "jsonlint-tree",
   "version": "1.0.1",
-  "description": "",
+  "description": "JSON lint a directory recursively",
   "main": "index.js",
   "bin": {
     "jsonlint-tree": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/educastellano/jsonlint-tree.git"
+  },
+  "author": "Eduard Castellano",
+  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postversion": "git push && git push --tags"
   },
   "dependencies": {
     "colors": "^1.1.2",
@@ -13,10 +23,5 @@
     "recursive-readdir": "^2.1.0",
     "replaceall": "^0.1.6"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+  "devDependencies": {}
 }

@@ -11,6 +11,9 @@ const cross = String.fromCharCode(0x2717).red
 
 var folder = argv._[0].startsWith('/') ? argv._[0] : `${process.cwd()}/${argv._[0]}`
 
+var passed = 0
+var failed = 0
+
 readdir(folder, (err, files) => {
     files.forEach(file => {
         if (file.endsWith('.json')) {
@@ -19,11 +22,20 @@ readdir(folder, (err, files) => {
                 try {
                     jsonlint.parse(data)
                     console.log(check, file)
+                    passed++
                 }
                 catch (e) {
+                    failed++
                     console.log(cross, file, `\n\t${replaceall('\n', '\n\t', e.toString())}`)
+                }
+                if (passed+failed === files.length) {
+                    console.log('\n')
+                    console.log('  ', check, passed, 'valid files')
+                    console.log('  ', cross, failed, 'invalid files')
+                    console.log('\n')
                 }
             })
         }        
     })
 })
+

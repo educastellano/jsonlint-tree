@@ -12,6 +12,9 @@
 
 ## Changelog
 
+* 1.1.0 
+    * It shows the number of valid and invalid files.
+
 * 1.0.0 
     * Initial release :tada:
 
