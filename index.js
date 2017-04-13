@@ -26,16 +26,16 @@ readdir(folder, (err, files) => {
                 }
                 catch (e) {
                     failed++
-                    console.log(cross, file, `\n\t${replaceall('\n', '\n\t', e.toString())}`)
+                    console.error(cross, file, `\n\t${replaceall('\n', '\n\t', e.toString())}`)
                 }
                 if (passed+failed === files.length) {
                     console.log('\n')
                     console.log('  ', check, passed, 'valid files')
                     console.log('  ', cross, failed, 'invalid files')
                     console.log('\n')
+                    process.exit(failed)
                 }
             })
-        }        
+        }
     })
 })
-
