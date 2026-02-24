@@ -4,19 +4,23 @@
 
 ## Install
 
-    npm install jsonlint-tree -g
+  npm install jsonlint-tree -g
 
 ## Usage
 
-    jsonlint-tree myfolder
+  jsonlint-tree myfolder
 
 ## Changelog
 
+* 2.0.0
+  * Remove deps
+  * Support from Node >=18.17.0
+
 * 1.1.0 
-    * It shows the number of valid and invalid files.
+  * It shows the number of valid and invalid files.
 
 * 1.0.0 
-    * Initial release :tada:
+  * Initial release :tada:
 
 ## License
 

@@ -13,15 +13,10 @@
   "author": "Eduard Castellano",
   "license": "ISC",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postversion": "git push && git push --tags"
+    "test": "echo \"No tests configured\""
   },
   "dependencies": {
-    "colors": "^1.1.2",
     "jsonlint": "^1.6.2",
-    "minimist": "^1.2.0",
-    "recursive-readdir": "^2.1.0",
-    "replaceall": "^0.1.6"
-  },
-  "devDependencies": {}
+    "minimist": "^1.2.0"
+  }
 }
