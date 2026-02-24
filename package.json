@@ -6,10 +6,26 @@
   "bin": {
     "jsonlint-tree": "./index.js"
   },
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=18.17"
+  },
+  "keywords": [
+    "json",
+    "lint",
+    "cli",
+    "validation"
+  ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/educastellano/jsonlint-tree.git"
+    "url": "https://github.com/educastellano/jsonlint-tree.git"
   },
+  "bugs": {
+    "url": "https://github.com/educastellano/jsonlint-tree/issues"
+  },
+  "homepage": "https://github.com/educastellano/jsonlint-tree#readme",
   "author": "Eduard Castellano",
   "license": "ISC",
   "scripts": {
