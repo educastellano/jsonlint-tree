@@ -2,12 +2,19 @@
 const fs = require('fs')
 const path = require('path')
 const jsonlint = require('jsonlint')
-const argv = require('minimist')(process.argv.slice(2))
+const args = process.argv.slice(2)
 
 const check = String.fromCharCode(0x2713)
 const cross = String.fromCharCode(0x2717)
 
-const folder = argv._[0].startsWith('/') ? argv._[0] : `${process.cwd()}/${argv._[0]}`
+const inputFolder = args[0]
+
+if (!inputFolder) {
+  console.error('Usage: jsonlint-tree <folder>')
+  process.exit(1)
+}
+
+const folder = path.resolve(inputFolder)
 
 let passed = 0
 let failed = 0

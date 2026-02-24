@@ -32,7 +32,6 @@
     "test": "echo \"No tests configured\""
   },
   "dependencies": {
-    "jsonlint": "^1.6.2",
-    "minimist": "^1.2.0"
+    "jsonlint": "^1.6.2"
   }
 }
