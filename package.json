@@ -1,6 +1,6 @@
 {
   "name": "jsonlint-tree",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Validate JSON files in a directory recursively",
   "main": "index.js",
   "bin": {
