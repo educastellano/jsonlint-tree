@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 const { promises: fs } = require('fs')
 const path = require('path')
-const jsonlint = require('jsonlint')
 const args = process.argv.slice(2)
 
 const check = String.fromCharCode(0x2713)
@@ -29,7 +28,7 @@ async function main () {
   await Promise.all(files.map(async file => {
     try {
       const data = await fs.readFile(file, 'utf8')
-      jsonlint.parse(data)
+      JSON.parse(data)
       console.log(check, file)
       passed++
     }

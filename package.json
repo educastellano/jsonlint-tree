@@ -30,8 +30,5 @@
   "license": "ISC",
   "scripts": {
     "test": "echo \"No tests configured\""
-  },
-  "dependencies": {
-    "jsonlint": "^1.6.2"
   }
 }

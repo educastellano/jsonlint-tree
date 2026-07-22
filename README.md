@@ -1,6 +1,6 @@
 # jsonlint-tree
 
-[jsonlint](https://www.npmjs.com/package/jsonlint) a directory recursively.
+Validate JSON files in a directory recursively
 
 ## Install
 
@@ -23,6 +23,12 @@
 ```
 
 ## Changelog
+
+* 3.0.0
+  * Exit code is now `1` on any failure
+  * Drop `jsonlint` dependency, it validates with a plain `JSON.parse` now
+  * Fix dir paths for NodeJS 24+
+  * Fix the summary not printing when non-json files are present
 
 * 2.0.0
   * Remove extra dependencies
