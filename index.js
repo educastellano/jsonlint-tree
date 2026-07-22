@@ -24,7 +24,7 @@ fs.readdir(folder, { recursive: true, withFileTypes: true }, (err, entries) => {
 
   const files = entries
     .filter(entry => entry.isFile())
-    .map(entry => path.join(entry.path, entry.name))
+    .map(entry => path.join(entry.parentPath ?? entry.path, entry.name))
 
   for (const file of files) {
     if (file.endsWith('.json')) {
