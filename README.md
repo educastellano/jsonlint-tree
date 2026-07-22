@@ -4,12 +4,14 @@ Validate JSON files in a directory recursively
 
 ## Install
 
+```sh
   npm i -g jsonlint-tree
+```
 
 ## Usage
 
 ```sh
-  $ jsonlint-tree directory
+  jsonlint-tree directory
 ```
 
 ```text
