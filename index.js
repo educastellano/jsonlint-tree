@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const fs = require('fs')
+const { promises: fs } = require('fs')
 const path = require('path')
 const jsonlint = require('jsonlint')
 const args = process.argv.slice(2)
@@ -16,35 +16,38 @@ if (!inputFolder) {
 
 const folder = path.resolve(inputFolder)
 
-let passed = 0
-let failed = 0
-
-fs.readdir(folder, { recursive: true, withFileTypes: true }, (err, entries) => {
-  if (err) throw err
+async function main () {
+  const entries = await fs.readdir(folder, { recursive: true, withFileTypes: true })
 
   const files = entries
     .filter(entry => entry.isFile() && entry.name.endsWith('.json'))
     .map(entry => path.join(entry.parentPath ?? entry.path, entry.name))
 
-  for (const file of files) {
-    fs.readFile(file, 'utf8', (err, data) => {
-      if (err) throw err
-      try {
-        jsonlint.parse(data)
-        console.log(check, file)
-        passed++
-      }
-      catch (e) {
-        failed++
-        console.error(cross, file, `\n\t${e.toString().split('\n').join('\n\t')}`)
-      }
-      if (passed+failed === files.length) {
-        console.log('\n')
-        console.log('  ', check, passed, 'valid files')
-        console.log('  ', cross, failed, 'invalid files')
-        console.log('\n')
-        process.exit(failed)
-      }
-    })
-  }
+  let passed = 0
+  let failed = 0
+
+  await Promise.all(files.map(async file => {
+    try {
+      const data = await fs.readFile(file, 'utf8')
+      jsonlint.parse(data)
+      console.log(check, file)
+      passed++
+    }
+    catch (e) {
+      failed++
+      console.error(cross, file, `\n\t${e.toString().split('\n').join('\n\t')}`)
+    }
+  }))
+
+  console.log('\n')
+  console.log('  ', check, passed, 'valid files')
+  console.log('  ', cross, failed, 'invalid files')
+  console.log('\n')
+
+  process.exit(failed > 0 ? 1 : 0)
+}
+
+main().catch(err => {
+  console.error(err)
+  process.exit(1)
 })
