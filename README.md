@@ -9,14 +9,14 @@ Validate JSON files in a directory recursively
 ## Usage
 
 ```sh
-  $ jsonlint-tree myfolder
+  $ jsonlint-tree directory
 ```
 
 ```text
-✓ myfolder/a.json
-✓ myfolder/path/b.json
-✓ myfolder/path/to/c.json
-✗ myfolder/path/to/d.json
+✓ directory/a.json
+✓ directory/path/b.json
+✓ directory/path/to/c.json
+✗ directory/path/to/d.json
 
    ✓ 3 valid files
    ✗ 1 invalid files
